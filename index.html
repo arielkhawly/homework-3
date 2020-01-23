@@ -21,18 +21,14 @@
         // Password Generator Button - Event handler 
         button.addEventListener("click", function () {
             alert("Choose your password criteria");
+            // Criteria selection for password
+
+            // Password length
+            let passLength = prompt("Choose a password length between 8 and 128");
+            // Special Characters
+            confirm("Add special characters?")
         });
-// Criteria selection for password
-
-// Password length
-        prompt("How long do you want your password to be?")
-// Special Characters
-        prompt("Add special characters?")
-//Password is generated
-//Password is shown on the screen. 
-
-
-
+        //Password is generated and shown on screen
 
         function makeid(length) {
             let result = '';
@@ -44,7 +40,9 @@
             return result;
         }
 
-        alert(makeid(5));
+
+
+
     </script>
 
 </body>
