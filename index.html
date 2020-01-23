@@ -12,6 +12,31 @@
         <h2>Generate a Password</h2>
     </div>
     <script>
+        // Password Generator Button - Button Creation
+        let button = document.createElement("button");
+        button.innerHTML = "Generate Password";
+        // Password Generator Button - Append
+        let body = document.getElementsByTagName("body")[0];
+        body.appendChild(button);
+        // Password Generator Button - Event handler 
+        button.addEventListener("click", function () {
+            alert("did something");
+        });
+
+
+
+
+        function makeid(length) {
+            let result = '';
+            let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!+*&_$%';
+            let charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        alert(makeid(5));
     </script>
 
 </body>
