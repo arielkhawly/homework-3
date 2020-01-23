@@ -3,6 +3,7 @@
 
 <head>
     <link type="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     <title>Password Generator</title>
 </head>
 
@@ -28,18 +29,18 @@
             // Special Characters
             confirm("Add special characters?")
         });
-        //Password is generated and shown on screen
-
+        //Password is generated 
         function makeid(length) {
             let result = '';
             let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!+*&_$%';
-            let charactersLength = characters.length;
+            let charactersLength = passLength;
             for (var i = 0; i < length; i++) {
                 result += characters.charAt(Math.floor(Math.random() * charactersLength));
             }
             return result;
         }
-
+// password is displayed on screen to the user
+        alert("Your new password is" + result)
 
 
 
