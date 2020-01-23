@@ -13,7 +13,6 @@
         <h2>Generate a Password</h2>
     </div>
     <script>
-
         // Password Generator Button - Button Creation
         let button = document.createElement("button");
         button.innerHTML = "Generate Password";
@@ -22,24 +21,27 @@
         body.appendChild(button);
         // Password Generator Button - Event handler 
         button.addEventListener("click", function () {
-            alert("Choose your password criteria");
+            alert("Let's begin choosing your password criteria");
             // Criteria selection for password
-
             // Password length
-            let passLength = prompt("Choose a password length between 8 and 128");
+            let passTotal = prompt("Choose a password length between 8 and 128");
             // Special Characters
             confirm("Add special characters?")
+            // to create user input, we have to CALL the function
+            makeid(passTotal)
         });
-        //Password is generated 
+        // Password is generated -- here were define the function
         function makeid(length) {
             let result = '';
             let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!+*&_$%';
-            for (var i = 0; i > 8 && i < 128; i++) {
-                result = characters.charAt(Math.floor(Math.random() * passLength));
+            for (var i = 0; i <= length; i++) {
+                result = result + characters.charAt(Math.floor(Math.random() * length));
             }
-            return result;
-            // password is displayed on screen to the user
-            alert("Your new password is" + result)
+
+    
+
+            // Password is displayed on screen to the user
+            alert("Your new password is " + result)
 
         }
 
