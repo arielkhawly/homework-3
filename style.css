@@ -3,3 +3,9 @@ title, h1, h2 {
     font-family: 'Bree Serif', serif;
 
 }
+h1 {font-size: 75px;
+}
+h2 {
+    font-size: 35px;
+    color: brown;
+}

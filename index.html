@@ -13,6 +13,7 @@
         <h2>Generate a Password</h2>
     </div>
     <script>
+
         // Password Generator Button - Button Creation
         let button = document.createElement("button");
         button.innerHTML = "Generate Password";
@@ -33,16 +34,14 @@
         function makeid(length) {
             let result = '';
             let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!+*&_$%';
-            let charactersLength = passLength;
-            for (var i = 0; i < length; i++) {
-                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            for (var i = 0; i > 8 && i < 128; i++) {
+                result = characters.charAt(Math.floor(Math.random() * passLength));
             }
             return result;
+            // password is displayed on screen to the user
+            alert("Your new password is" + result)
+
         }
-// password is displayed on screen to the user
-        alert("Your new password is" + result)
-
-
 
     </script>
 
