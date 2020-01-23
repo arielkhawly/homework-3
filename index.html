@@ -26,14 +26,17 @@
             // Password length
             let passTotal = prompt("Choose a password length between 8 and 128");
             // Special Characters
-            confirm("Add special characters?")
-            // to create user input, we have to CALL the function
-            makeid(passTotal)
+           let special = confirm("Add special characters?")
+            // to add user input into the result, we have to CALL the function
+            makeid(passTotal, special)
         });
         // Password is generated -- here were define the function
-        function makeid(length) {
+        function makeid(length, special) {
             let result = '';
-            let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!+*&_$%';
+            let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            if (special === true) {
+                characters = characters + "!+*&_$%"
+            }
             for (var i = 0; i <= length; i++) {
                 result = result + characters.charAt(Math.floor(Math.random() * length));
             }
