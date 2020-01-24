@@ -27,27 +27,40 @@
             let passTotal = prompt("Choose a password length between 8 and 128");
             // Special Characters
             let special = confirm("Add special characters?")
-            // to add user input into the result, we have to CALL the function
-            makeid(passTotal, special)
+    //lowercase
+            let lowercase = confirm("Add lowercase letters?")
+    //uppercase
+            let uppercase = confirm("Add uppercase letters?")
+    //numeric
+            let numeric = confirm("Add numbers?")
+            // to add user input into the result, we have to CALL the functions
+            makeid(passTotal, special, lowercase, uppercase, numeric)
         });
         // Password is generated -- here were define the function
-        function makeid(length, special) {
+        function makeid(length, special, lowercase, uppercase, numeric) {
             if (length < 8 || length > 128) {
                 return;
             }
             let result = '';
-            let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            // to give users the option of special characters, we need an if conditional to work with their confirm choice. 
+            let characters = "";
+            // to give users the option of lowercase, uppercase, numeric, or special characters,
+            // we need an if conditional to work with their confirm choice. 
             if (special === true) {
                 characters = characters + "!+*&_$%"
             }
+            if (lowercase === true){
+                characters = characters + "abcdefghijklmnopqrstuvwxyz"
+            }
+            if (uppercase === true) {
+                characters = characters + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            }
+            if (numeric === true) {
+                characters = characters + "0123456789"
+            }
             // this is where the actual password is generated after all user inputs are considered. 
             for (var i = 0; i < length; i++) {
-                result = result + characters.charAt(Math.floor(Math.random() * length));
+                result = result + characters.charAt(Math.floor(Math.random() * characters.length));
             }
-
-
-
             // Password is displayed on screen to the user
             alert("Your new password is " + result)
 
